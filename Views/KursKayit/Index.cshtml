@@ -1,0 +1,23 @@
+@model IEnumerable<KursKayit>
+
+    <h2>Kurs Kayitlari</h2>
+    <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(m => m.KayitId)</th>
+                        <th>@Html.DisplayNameFor(m => m.Ogrenci.OgrenciAd)</th>
+                        <th>@Html.DisplayNameFor(m => m.Kurs.KursId)</th>
+                        <th></th>
+                </tr>
+            </thead>
+    <tbody>
+        @foreach(var item in Model) {
+        <tr>
+            <td>@item.KayitId</td>
+                <td>@item.Ogrenci.OgrenciAd</td>
+                      <td>@item.Kurs.Baslik</td>
+        </tr>
+        }
+
+    </tbody>
+    </table>

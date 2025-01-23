@@ -1,0 +1,27 @@
+@model IEnumerable<Ogretmen>
+
+<h1>Ogretmenler Listesi</h1>
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <td>@Html.DisplayNameFor(m =>m.OgretmenAd)</td>
+ 
+                        <td> @Html.DisplayNameFor(m =>m.OgretmenSoyad)</td>
+                                        <td></td>
+        </tr>
+    </thead>
+<tbody>
+    @foreach(var ogr  in Model){
+        <tr>
+            <td>@ogr.OgretmenAd  </td>
+        <td> @ogr.OgretmenSoyad </td>
+            <td>
+                <a asp-controller="ogretmen" asp-action="edit" asp-route-id="@ogr.OgretmenId" class="btn btn-primary">Edit</a>
+                  <a asp-controller="ogretmen" asp-action="delete" asp-route-id="@ogr.OgretmenId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+
+</tbody>
+</table>

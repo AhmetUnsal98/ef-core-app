@@ -1,0 +1,16 @@
+
+@model Ogretmen
+
+<h1>Öğretmen Kayıt</h1>
+<form asp-controller="ogretmen" asp-action="Create" method="post" >
+    <div class="mb-3 row">
+        <label asp-for="OgretmenAd" class="form-label"></label>
+        <input type="text" asp-for="OgretmenAd" class="form-control">
+    </div>
+    <div class="mb-3 row">
+    <label asp-for="OgretmenSoyad" class="form-label"></label>
+    <input type="text" asp-for="OgretmenSoyad" class="form-control">
+    </div>
+ 
+     <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>

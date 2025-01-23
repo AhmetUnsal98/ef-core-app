@@ -1,0 +1,29 @@
+@model IEnumerable<Ogrenci>
+
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <td>@Html.DisplayNameFor(m =>m.OgrenciAd )</td>
+            <td>@Html.DisplayNameFor(m =>m.OgrenciSoyad )</td>
+            <td>@Html.DisplayNameFor(m =>m.Eposta )</td>
+            <td>@Html.DisplayNameFor(m =>m.Telefon )</td>
+            <td></td>
+        </tr>
+    </thead>
+<tbody>
+    @foreach(var ogrenci  in Model){
+        <tr>
+            <td>@ogrenci.OgrenciAd</td>
+            <td>@ogrenci.OgrenciSoyad</td>
+            <td>@ogrenci.Eposta</td>
+            <td>@ogrenci.Telefon</td>
+            <td>
+                <a asp-controller="ogrenci" asp-action="edit" asp-route-id="@ogrenci.OgrenciId" class="btn btn-primary">Edit</a>
+                  <a asp-controller="ogrenci" asp-action="delete" asp-route-id="@ogrenci.OgrenciId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+
+</tbody>
+</table>

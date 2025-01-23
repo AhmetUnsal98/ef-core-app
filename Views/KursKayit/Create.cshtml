@@ -1,0 +1,16 @@
+
+@model KursKayit
+
+<h1>Kurs Kayıt Ekleme</h1>
+<form asp-controller="kurskayit" asp-action="Create" method="post" >
+    <div class="mb-3 row">
+        <label asp-for="OgrenciId" class="form-label"></label>
+        <select asp-for="OgrenciId"  asp-items="ViewBag.Ogrenciler" class="form-control"></select>
+    </div>
+
+    <div class="mb-3 row">
+        <label   asp-for="KursId" class="form-label"></label>
+        <select asp-for="KursId"  asp-items="ViewBag.Kurslar" class="form-control"></select>
+    </div>
+     <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>
